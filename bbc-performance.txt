@@ -1,0 +1,282 @@
+Question 7
+MultinomialNB Default values try 1 
+
+(b)
+Confusion Matrix: 
+[[89  0  2  0  2]
+ [ 0 84  1  0  1]
+ [ 1  0 78  0  1]
+ [ 0  0  1 96  0]
+ [ 0  1  0  0 88]] 
+
+-------------------------------------------------------------------------------------
+(c)
+
+ Classification Report
+               precision    recall  f1-score   support
+
+     business       0.99      0.96      0.97        93
+entertainment       0.99      0.98      0.98        86
+     politics       0.95      0.97      0.96        80
+        sport       1.00      0.99      0.99        97
+         tech       0.96      0.99      0.97        89
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+-------------------------------------------------------------------------------------
+
+ (d)
+Accuracy =  0.9775280898876404
+MacroF1score =  0.9770582084799463
+WeightedF1score =  0.9775868029015019
+-------------------------------------------------------------
+(e)
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+Prior probabilities: 
+[0.23426966 0.16853933 0.18932584 0.23258427 0.1752809 ]
+-------------------------------------------------------------
+(f)
+Size of the vocabulary(for training set) is the number of columns:  (1780, 26977)
+**Another way to get the size of vocabulary** 26977
+-------------------------------------------------------------
+(g)
+Number of word tokens for each class in the training set:  [134055  98546 150559 134363 155383]
+Number of word tokens for each class in the test set:  [29889 25550 34085 28035 42478]
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+NB: The MultinomialNB attribute class_count_ generates the number of documents for each class which is not what we are looking for!
+[417. 300. 337. 414. 312.] Number of docs/class for training set
+[93. 86. 80. 97. 89.] Number of docs/class for test set
+[510. 386. 417. 511. 401.] Total number of docs for each class
+-------------------------------------------------------------
+(h)
+Number of tokens in the entire corpus for each class [163944 124096 184644 162398 197861]
+Number of tokens in the entire corpus 832943
+-------------------------------------------------------------
+(i)
+Number of words with a frequency of zero in trainning set:  47658364
+Percentage of words with a frequency of zero in trainning set: 99.24884826983286 %
+-------------------------------------------------------------
+(j)
+Number of words with a frequency of one in the entire corpus:  317562
+Percentage of words with a frequency of one in the entire corpus: 0.5290599191237813 %
+-------------------------------------------------------------
+(k)
+My 2 FAV words with their indices: eminem: 4621 ; tennis: 12841 (retrieved by running vectorizer.vocabulary_)
+eminem Log-prob:  [-11.98935838 -11.74024429 -12.08692868 -11.99126922 -11.42059085]
+tennis Log-prob:  [ -9.90991684 -11.74024429 -12.08692868 -11.99126922 -12.11373803]
+-------------------------------------------------------------
+Question 8
+MultinomialNB Default values try 2 
+
+Step 7
+(b)
+Confusion Matrix: 
+[[89  0  2  0  2]
+ [ 0 84  1  0  1]
+ [ 1  0 78  0  1]
+ [ 0  0  1 96  0]
+ [ 0  1  0  0 88]] 
+
+-------------------------------------------------------------------------------------
+(c)
+
+ Classification Report
+               precision    recall  f1-score   support
+
+     business       0.99      0.96      0.97        93
+entertainment       0.99      0.98      0.98        86
+     politics       0.95      0.97      0.96        80
+        sport       1.00      0.99      0.99        97
+         tech       0.96      0.99      0.97        89
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+-------------------------------------------------------------------------------------
+
+ (d)
+Accuracy =  0.9775280898876404
+MacroF1score =  0.9770582084799463
+WeightedF1score =  0.9775868029015019
+-------------------------------------------------------------
+(e)
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+Prior probabilities: 
+[0.23426966 0.16853933 0.18932584 0.23258427 0.1752809 ]
+-------------------------------------------------------------
+(f)
+Size of the vocabulary(for training set) is the number of columns:  (1780, 26977)
+**Another way to get the size of vocabulary** 26977
+-------------------------------------------------------------
+(g)
+Number of word tokens for each class in the training set:  [134055  98546 150559 134363 155383]
+Number of word tokens for each class in the test set:  [29889 25550 34085 28035 42478]
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+NB: The MultinomialNB attribute class_count_ generates the number of documents for each class which is not what we are looking for!
+[417. 300. 337. 414. 312.] Number of docs/class for training set
+[93. 86. 80. 97. 89.] Number of docs/class for test set
+[510. 386. 417. 511. 401.] Total number of docs for each class
+-------------------------------------------------------------
+(h)
+Number of tokens in the entire corpus for each class [163944 124096 184644 162398 197861]
+Number of tokens in the entire corpus 832943
+-------------------------------------------------------------
+(i)
+Number of words with a frequency of zero in trainning set:  47658364
+Percentage of words with a frequency of zero in trainning set: 99.24884826983286 %
+-------------------------------------------------------------
+(j)
+Number of words with a frequency of one in the entire corpus:  317562
+Percentage of words with a frequency of one in the entire corpus: 0.5290599191237813 %
+-------------------------------------------------------------
+(k)
+My 2 FAV words with their indices: eminem: 4621 ; tennis: 12841 (retrieved by running vectorizer.vocabulary_)
+eminem Log-prob:  [-11.98935838 -11.74024429 -12.08692868 -11.99126922 -11.42059085]
+tennis Log-prob:  [ -9.90991684 -11.74024429 -12.08692868 -11.99126922 -12.11373803]
+-------------------------------------------------------------
+Question 9
+MultinomialNB try 3 with smoothing value = 0.0001  
+
+Step 7
+(b)
+Confusion Matrix: 
+[[87  1  2  0  3]
+ [ 0 84  2  0  0]
+ [ 0  0 79  0  1]
+ [ 0  0  1 96  0]
+ [ 1  1  0  0 87]] 
+
+-------------------------------------------------------------------------------------
+(c)
+
+ Classification Report
+               precision    recall  f1-score   support
+
+     business       0.99      0.94      0.96        93
+entertainment       0.98      0.98      0.98        86
+     politics       0.94      0.99      0.96        80
+        sport       1.00      0.99      0.99        97
+         tech       0.96      0.98      0.97        89
+
+     accuracy                           0.97       445
+    macro avg       0.97      0.97      0.97       445
+ weighted avg       0.97      0.97      0.97       445
+
+-------------------------------------------------------------------------------------
+
+ (d)
+Accuracy =  0.9730337078651685
+MacroF1score =  0.9725940213120179
+WeightedF1score =  0.9730499512552644
+-------------------------------------------------------------
+(e)
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+Prior probabilities: 
+[0.23426966 0.16853933 0.18932584 0.23258427 0.1752809 ]
+-------------------------------------------------------------
+(f)
+Size of the vocabulary(for training set) is the number of columns:  (1780, 26977)
+**Another way to get the size of vocabulary** 26977
+-------------------------------------------------------------
+(g)
+Number of word tokens for each class in the training set:  [134055  98546 150559 134363 155383]
+Number of word tokens for each class in the test set:  [29889 25550 34085 28035 42478]
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+NB: The MultinomialNB attribute class_count_ generates the number of documents for each class which is not what we are looking for!
+[417. 300. 337. 414. 312.] Number of docs/class for training set
+[93. 86. 80. 97. 89.] Number of docs/class for test set
+[510. 386. 417. 511. 401.] Total number of docs for each class
+-------------------------------------------------------------
+(h)
+Number of tokens in the entire corpus for each class [163944 124096 184644 162398 197861]
+Number of tokens in the entire corpus 832943
+-------------------------------------------------------------
+(i)
+Number of words with a frequency of zero in trainning set:  47658364
+Percentage of words with a frequency of zero in trainning set: 99.24884826983286 %
+-------------------------------------------------------------
+(j)
+Number of words with a frequency of one in the entire corpus:  317562
+Percentage of words with a frequency of one in the entire corpus: 0.5290599191237813 %
+-------------------------------------------------------------
+(k)
+My 2 FAV words with their indices: eminem: 4621 ; tennis: 12841 (retrieved by running vectorizer.vocabulary_)
+eminem Log-prob:  [-21.01636594 -20.70864647 -21.1324686  -21.01866082 -11.95356568]
+tennis Log-prob:  [ -9.86010113 -20.70864647 -21.1324686  -21.01866082 -21.16400605]
+-------------------------------------------------------------
+
+Question 10
+MultinomialNB try 4 with smoothing value = 0.9  
+
+Step 7
+(b)
+Confusion Matrix: 
+[[89  0  2  0  2]
+ [ 0 84  1  0  1]
+ [ 1  0 78  0  1]
+ [ 0  0  1 96  0]
+ [ 0  1  0  0 88]] 
+
+-------------------------------------------------------------------------------------
+(c)
+
+ Classification Report
+               precision    recall  f1-score   support
+
+     business       0.99      0.96      0.97        93
+entertainment       0.99      0.98      0.98        86
+     politics       0.95      0.97      0.96        80
+        sport       1.00      0.99      0.99        97
+         tech       0.96      0.99      0.97        89
+
+     accuracy                           0.98       445
+    macro avg       0.98      0.98      0.98       445
+ weighted avg       0.98      0.98      0.98       445
+
+-------------------------------------------------------------------------------------
+
+ (d)
+Accuracy =  0.9775280898876404
+MacroF1score =  0.9770582084799463
+WeightedF1score =  0.9775868029015019
+-------------------------------------------------------------
+(e)
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+Prior probabilities: 
+[0.23426966 0.16853933 0.18932584 0.23258427 0.1752809 ]
+-------------------------------------------------------------
+(f)
+Size of the vocabulary(for training set) is the number of columns:  (1780, 26977)
+**Another way to get the size of vocabulary** 26977
+-------------------------------------------------------------
+(g)
+Number of word tokens for each class in the training set:  [134055  98546 150559 134363 155383]
+Number of word tokens for each class in the test set:  [29889 25550 34085 28035 42478]
+Class names:  ['business', 'entertainment', 'politics', 'sport', 'tech']
+NB: The MultinomialNB attribute class_count_ generates the number of documents for each class which is not what we are looking for!
+[417. 300. 337. 414. 312.] Number of docs/class for training set
+[93. 86. 80. 97. 89.] Number of docs/class for test set
+[510. 386. 417. 511. 401.] Total number of docs for each class
+-------------------------------------------------------------
+(h)
+Number of tokens in the entire corpus for each class [163944 124096 184644 162398 197861]
+Number of tokens in the entire corpus 832943
+-------------------------------------------------------------
+(i)
+Number of words with a frequency of zero in trainning set:  47658364
+Percentage of words with a frequency of zero in trainning set: 99.24884826983286 %
+-------------------------------------------------------------
+(j)
+Number of words with a frequency of one in the entire corpus:  317562
+Percentage of words with a frequency of one in the entire corpus: 0.5290599191237813 %
+-------------------------------------------------------------
+(k)
+My 2 FAV words with their indices: eminem: 4621 ; tennis: 12841 (retrieved by running vectorizer.vocabulary_)
+eminem Log-prob:  [-12.07782442 -11.82387882 -12.17697734 -12.07976778 -11.45698037]
+tennis Log-prob:  [ -9.90560114 -11.82387882 -12.17697734 -12.07976778 -12.20419477]
+-------------------------------------------------------------
+1
+​
