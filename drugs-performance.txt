@@ -1,0 +1,177 @@
+Question 7
+
+Model a: Gaussian Naive bayes
+b) The Confusion matrix
+[[ 0  2  1  1  1]
+ [ 1  0  0  0  2]
+ [ 1  0  1  1  3]
+ [ 1  0  2  2  5]
+ [ 2  0  5  9 10]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         5
+       drugB       0.00      0.00      0.00         3
+       drugC       0.11      0.17      0.13         6
+       drugX       0.15      0.20      0.17        10
+       drugY       0.48      0.38      0.43        26
+
+    accuracy                           0.26        50
+   macro avg       0.15      0.15      0.15        50
+weighted avg       0.29      0.26      0.27        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  0.26
+MacroF1score =  0.14655565834104223
+WeightedF1score =  0.272059204440333
+--------------------------------------------------------------------------------------
+Model b: Base-DT
+b) The Confusion matrix
+[[ 0  1  0  1  3]
+ [ 0  0  0  0  3]
+ [ 1  0  0  1  4]
+ [ 1  0  1  3  5]
+ [ 2  0  3 10 11]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         5
+       drugB       0.00      0.00      0.00         3
+       drugC       0.00      0.00      0.00         6
+       drugX       0.20      0.30      0.24        10
+       drugY       0.42      0.42      0.42        26
+
+    accuracy                           0.28        50
+   macro avg       0.12      0.14      0.13        50
+weighted avg       0.26      0.28      0.27        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  0.28
+MacroF1score =  0.13261538461538463
+WeightedF1score =  0.268
+--------------------------------------------------------------------------------------
+Model c: Top-DT
+Hyper parameters values changed: 
+criterion: gini/entropy, max_depth = 2, 4 and min_samples_split = 6, 12, 20
+Best hyper parameters found: 
+Best Criterion:  gini
+Best Max_depth:  4
+Best Min_amples_split:  6
+
+b) The Confusion matrix
+[[ 5  0  0  0  0]
+ [ 0  3  0  0  0]
+ [ 0  0  6  0  0]
+ [ 0  0  0 10  0]
+ [ 0  0  0  0 26]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         5
+       drugB       1.00      1.00      1.00         3
+       drugC       1.00      1.00      1.00         6
+       drugX       1.00      1.00      1.00        10
+       drugY       1.00      1.00      1.00        26
+
+    accuracy                           1.00        50
+   macro avg       1.00      1.00      1.00        50
+weighted avg       1.00      1.00      1.00        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  1.0
+MacroF1score =  1.0
+WeightedF1score =  1.0
+--------------------------------------------------------------------------------------
+Model d: Perceptron
+b) The Confusion matrix
+[[ 2  3  0  0  0]
+ [ 0  3  0  0  0]
+ [ 0  4  0  1  1]
+ [ 1  4  0  2  3]
+ [ 0  3  0  8 15]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       0.67      0.40      0.50         5
+       drugB       0.18      1.00      0.30         3
+       drugC       0.00      0.00      0.00         6
+       drugX       0.18      0.20      0.19        10
+       drugY       0.79      0.58      0.67        26
+
+    accuracy                           0.44        50
+   macro avg       0.36      0.44      0.33        50
+weighted avg       0.52      0.44      0.45        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  0.44
+MacroF1score =  0.3314285714285714
+WeightedF1score =  0.4527619047619047
+--------------------------------------------------------------------------------------
+​Model e: Base MLP
+b) The Confusion matrix
+[[ 0  0  0  2  3]
+ [ 0  0  0  3  0]
+ [ 0  0  0  4  2]
+ [ 0  0  0  4  6]
+ [ 0  0  0  3 23]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       0.00      0.00      0.00         5
+       drugB       0.00      0.00      0.00         3
+       drugC       0.00      0.00      0.00         6
+       drugX       0.25      0.40      0.31        10
+       drugY       0.68      0.88      0.77        26
+
+    accuracy                           0.54        50
+   macro avg       0.19      0.26      0.21        50
+weighted avg       0.40      0.54      0.46        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  0.54
+MacroF1score =  0.21487179487179486
+WeightedF1score =  0.46020512820512816
+--------------------------------------------------------------------------------------
+Model f: Top MLP
+Hyperparameter values: 
+solver = adam, sgd; Activation function = logistic, tanh, relu, identity
+network architecture = (30, 50), (10, 10, 10)
+Best hyperparameters found:
+Best activation Function:  logistic
+Best network architecture:  (30, 50)
+Best solver:  adam
+
+b) The Confusion matrix
+[[ 5  0  0  0  0]
+ [ 0  2  0  0  1]
+ [ 0  0  5  1  0]
+ [ 0  0  0 10  0]
+ [ 0  0  0  0 26]] 
+
+c) Precision, Recall, and F1-measure using the Classification Report
+              precision    recall  f1-score   support
+
+       drugA       1.00      1.00      1.00         5
+       drugB       1.00      0.67      0.80         3
+       drugC       1.00      0.83      0.91         6
+       drugX       0.91      1.00      0.95        10
+       drugY       0.96      1.00      0.98        26
+
+    accuracy                           0.96        50
+   macro avg       0.97      0.90      0.93        50
+weighted avg       0.96      0.96      0.96        50
+
+d) Accuracy, Macro-Average F1 and Weighted-Average F1
+Accuracy =  0.96
+MacroF1score =  0.9285207873887119
+WeightedF1score =  0.9577557788123826
+--------------------------------------------------------------------------------------
+
+
+
+​
