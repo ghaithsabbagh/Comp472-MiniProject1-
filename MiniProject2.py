@@ -6,7 +6,8 @@ class Game:
 	HUMAN = 2
 	AI = 3
 
-	def __init__(self, n, b, b_pos, s, t):
+	def __init__(self, recommend = true, n, b, b_pos, s, t):
+		self.recommend = recommend
 		self.n = n # NOTE: size of the board
 		self.b = b # BUG: Number of blocks
 		self.b_pos = b_pos # position of the blocks
@@ -17,7 +18,7 @@ class Game:
 		self.a = a # boolean for algorithm: Minimax(false) or Alphabeta(true)
 
 		self.initialize_game()
-		#self.recommend = recommend
+		#
 
 	def initialize_game(self):
 
@@ -276,7 +277,8 @@ def main():
 	# g.play(algo=Game.MINIMAX,player_x=Game.AI,player_o=Game.HUMAN)
 
 	# Game Trace Output File
-	f = open("gameTrace.txt", "w+")
+	gameTraceName = "gameTrace-" + str(self.n) + str(self.b) + str(self.s) + str(self.t)
+	f = open(gameTraceName, "w+")
 	f.write("n= %d\t" %self.n, "b= %d\t" %self.b, "s= %d\t" %self.s, "t= %d\t" %self.t)
 	f.write("blocs= [ %d" %self.b_pos, "]", "\n")
 
