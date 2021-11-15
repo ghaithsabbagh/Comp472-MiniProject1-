@@ -18,7 +18,6 @@ class Game:
 		self.a = a # boolean for algorithm: Minimax(false) or Alphabeta(true)
 
 		self.initialize_game()
-		#
 
 	def initialize_game(self):
 
