@@ -54,49 +54,62 @@ class Game:
 		 	return True
 
 	def is_end(self):
+		# Making the Win condition for X & O from the winning size
+		WinO = 'O' * self.s # Checking if it's is (n) number of Os
+	    	WinX = 'X' * self.s # Checking if (n) number of Xs
+	    
 		# Vertical win
-		# for i in range(0, self.s):
-		# 	if (self.current_state[0][i] != '.' and
-		# 		self.current_state[0][i] == self.current_state[1][i] and
-		# 		self.current_state[1][i] == self.current_state[2][i]):
-		# 		return self.current_state[0][i]
-		# # Horizontal win
-		# for i in range(0, self.s):
-		# 	if (self.current_state[i] == ['X', 'X', 'X']):
-		# 		return 'X'
-		# 	elif (self.current_state[i] == ['O', 'O', 'O']):
-		# 		return 'O'
-		# # Main diagonal win
-		# if (self.current_state[0][0] != '.' and
-		# 	self.current_state[0][0] == self.current_state[1][1] and
-		# 	self.current_state[0][0] == self.current_state[2][2]):
-		# 	return self.current_state[0][0]
+		# Loops through the board columns and saves the values in a list and then checks if the saved value WinO or WinX is part of that list and returns X or O
+	    	for i in range(0, self.s):
+			colWin = [col[i] for col in self.current_state]
+		    	columnWin = "".join(str(j) for j in colWin)
+		     
+		    	if (WinO in columnWin):
+		        	return 'O'
+		    	if (WinX in columnWin):
+		        	return 'X'
+		# Horizontal win
+		for i in range(0, self.s):
+			rowWin = "".join(str(j) for j in self.current_state[i])
+		    	if (WinO in rowWin):
+		 		return 'O'
+		 	elif (WinX in rowWin):
+		 		return 'X'
+		
+		# Diagonals win
+		 #if (self.current_state[0][0] != '.' and
+		 #	self.current_state[0][0] == self.current_state[1][1] and
+		 	#self.current_state[0][0] == self.current_state[2][2]):
+		 	#return self.current_state[0][0]
+		
 		# # Second diagonal win
 		# if (self.current_state[0][2] != '.' and
 		# 	self.current_state[0][2] == self.current_state[1][1] and
 		# 	self.current_state[0][2] == self.current_state[2][0]):
 		# 	return self.current_state[0][2]
-		# # Is whole board full?
-		# for i in range(0, self.n):
-		# 	for j in range(0, self.n):
-		# 		# There's an empty field, we continue the game
-		# 		if (self.current_state[i][j] == '.'):
-		# 			return None
-		# # It's a tie!
-		# return '.'
+		
+		# Is whole board full? Stays the same
+		 for i in range(0, self.n):
+		 	for j in range(0, self.n):
+		 		# There's an empty field, we continue the game
+		 		if (self.current_state[i][j] == '.'):
+		 			return None
+		# It's a tie!
+		return '.'
 
+	
 	def check_end(self):
-		# self.result = self.is_end()
-		# # Printing the appropriate message if the game has ended
-		# if self.result != None:
-		# 	if self.result == 'X':
-		# 		print('The winner is X!')
-		# 	elif self.result == 'O':
-		# 		print('The winner is O!')
-		# 	elif self.result == '.':
-		# 		print("It's a tie!")
-		# 	self.initialize_game()
-		# return self.result
+		self.result = self.is_end()
+		# Printing the appropriate message if the game has ended
+		if self.result != None:
+			if self.result == 'X':
+		 		print('The winner is X!')
+		 	elif self.result == 'O':
+		 		print('The winner is O!')
+		 	elif self.result == '.':
+		 		print("It's a tie!")
+		 	self.initialize_game()
+		 return self.result
 
 	def input_move(self):
 		# while True:
