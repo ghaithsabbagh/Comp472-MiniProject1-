@@ -95,18 +95,23 @@ class Game:
 				return 'X'
 
 		# Diagonals win
-		 #if (self.current_state[0][0] != '.' and
-		 #	self.current_state[0][0] == self.current_state[1][1] and
-		 	#self.current_state[0][0] == self.current_state[2][2]):
-		 	#return self.current_state[0][0]
+		# Positive sloped diagonal win
+		for c in range (self.n - (self.s-1)):
+			for r in range (self.n - (self.s-1)):
+				if (self.current_state[r][c] != '.' and
+					self.current_state[r][c] == self.current_state[r+1][c+1] and
+					self.current_state[r][c] == self.current_state[r+2][c+2]):
+						return self.current_state[r][c]   # or return True
+					
+		# Negative sloped diagonal win
+		for c in range (self.n - (self.s-1)):
+			for r in range (self.s-1, self.n):
+				if (self.current_state[r][c] != '.' and
+					self.current_state[r][c] == self.current_state[r-1][c+1] and
+					self.current_state[r][c] == self.current_state[r-2][c+2]):
+						return self.current_state[r][c]   # or return True
 
-		# # Second diagonal win
-		# if (self.current_state[0][2] != '.' and
-		# 	self.current_state[0][2] == self.current_state[1][1] and
-		# 	self.current_state[0][2] == self.current_state[2][0]):
-		# 	return self.current_state[0][2]
-
-
+		
 		# Is whole board full? (Stays the same)
 		for i in range(0, self.n):# There's an empty field, we continue the game
 			for j in range(0, self.n):
