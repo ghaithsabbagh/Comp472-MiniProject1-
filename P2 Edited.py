@@ -40,8 +40,6 @@ class Game:
             		for i in range(0, self.b):
                 		b1 = random.randint(0, self.n - 1)
                 		b2 = random.randint(0, self.n - 1)
-				
-		
 
 		# Player X always plays first
 		self.player_turn = 'X'
