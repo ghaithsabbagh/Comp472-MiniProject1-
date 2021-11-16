@@ -6,7 +6,7 @@ class Game:
 	HUMAN = 2
 	AI = 3
 
-	def __init__(self, recommend = true, n, b, b_pos, s, t):
+	def __init__(self, recommend = True, n, b, b_pos = [], s, t):
 		self.recommend = recommend
 		self.n = n # NOTE: size of the board
 		self.b = b # BUG: Number of blocks
@@ -26,6 +26,10 @@ class Game:
             		for j in range(self.n):
                 		row.append('.')
             		self.current_state.append(row)
+		
+		# For making the blocs
+		for blocs in self.b_pos:
+			#self.current_state[][] = '*'
 
 		# Player X always plays first
 		self.player_turn = 'X'
