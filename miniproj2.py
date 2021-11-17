@@ -61,7 +61,7 @@ class Game:
 			print(chr(ord(ch) + y) + " ", end="")
 			file.write(chr(ord(ch) + y))
 		print()
-		file.print("\n")
+		file.write("\n")
 
 		for x in range(0, self.n):
 			print(str(x) + " | ", end="")
@@ -363,6 +363,7 @@ class Game:
 							beta = min(beta, eval)
 				return minEval
 
+				   
 	def play(self,player_x,player_o):
 
 		while True:
@@ -435,6 +436,19 @@ def main():
 		depth2 = None
 
 	g = Game(board_size, blocks_num, blocks_pos, lineup_size, max_time, depth1, depth2, a)
+				   
+	Player1 = "AI" if player_x == Game.AI else "HUMAN"
+        Player2 = "AI" if player_o == Game.AI else "HUMAN"
+	
+	with open("gameTrace-" + str(board_size)+ str(blocks_num)+ str(lineup_size) + str(max_time)+ ".txt", "a") as file:
+		file.write("n="+ str(board_size)+ " b="+str(blocks_num)+ " s="+ str(lineup_size)+ " t="+ str(max_time)+"\n")
+		file.write("blocs = " +str(blocks_pos)+ "\n")
+
+		file.write("Player 1: "+str(Player1)+ "d = " + str(depth1)+ " a = " + str(a)+ " e1\n")
+		file.write("Player 2: "+str(Player2)+ "d = " + str(depth2)+ " a = "+ str(a)+ " e2\n")
+				   
+				   
+				   
 	g.play(player_x, player_o)
 	# g.play(algo=Game.ALPHABETA,player_x=Game.AI,player_o=Game.AI)
 	# g.play(algo=Game.MINIMAX,player_x=Game.AI,player_o=Game.HUMAN)
