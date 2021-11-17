@@ -94,17 +94,39 @@ class Game:
 			elif (WinX in rowWin):
 				return 'X'
 
-		# Diagonals win
-		 #if (self.current_state[0][0] != '.' and
-		 #	self.current_state[0][0] == self.current_state[1][1] and
-		 	#self.current_state[0][0] == self.current_state[2][2]):
-		 	#return self.current_state[0][0]
+		# Vertical win
+		# Loops through the board columns and saves the values in a list and then checks if the saved value WinO or WinX is part of that list and returns X or O
+		for i in range(0, self.s):
+			colWin = [col[i] for col in self.current_state]
+			columnWin = "".join(str(j) for j in colWin)
 
-		# # Second diagonal win
-		# if (self.current_state[0][2] != '.' and
-		# 	self.current_state[0][2] == self.current_state[1][1] and
-		# 	self.current_state[0][2] == self.current_state[2][0]):
-		# 	return self.current_state[0][2]
+			if (WinO in columnWin):
+				return 'O'
+			if (WinX in columnWin):
+				return 'X'
+
+		# Horizontal win
+		for i in range(0, self.s):
+			rowWin = "".join(str(j) for j in self.current_state[i])
+			if (WinO in rowWin):
+				return 'O'
+			elif (WinX in rowWin):
+				return 'X'
+
+		# Diagonals win
+		# Positive slopped Diagonal
+		for c in range(self.n - (self.s-1)):
+			for r in range(self.n - (self.s-1)):
+		        	if (self.current_state[r][c] != '.' and self.current_state[r][c] != '*' and 
+				    self.current_state[r][c] == self.current_state[r+1][c+1] and self.current_state[r][c] == self.current_state[r+2][c+2]):
+		 	        	return self.current_state[r][c] # return True
+
+		# Negative slopped diagonal win
+		for c in range(self.n - (self.s-1)):
+			for r in range(self.s-1, self.n):
+		        	if (self.current_state[r][c] != '.' and self.current_state[r][c] != '*' and 
+				    self.current_state[r][c] == self.current_state[r-1][c+1] and self.current_state[r][c] == self.current_state[r-2][c+2]):
+		 	       		return self.current_state[r][c] # return True
 
 
 		# Is whole board full? (Stays the same)
