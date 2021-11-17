@@ -107,25 +107,6 @@ class Game:
 			elif (WinX in rowWin):
 				return 'X'
 
-		# Vertical win
-		# Loops through the board columns and saves the values in a list and then checks if the saved value WinO or WinX is part of that list and returns X or O
-		for i in range(0, self.s):
-			colWin = [col[i] for col in self.current_state]
-			columnWin = "".join(str(j) for j in colWin)
-
-			if (WinO in columnWin):
-				return 'O'
-			if (WinX in columnWin):
-				return 'X'
-
-		# Horizontal win
-		for i in range(0, self.s):
-			rowWin = "".join(str(j) for j in self.current_state[i])
-			if (WinO in rowWin):
-				return 'O'
-			elif (WinX in rowWin):
-				return 'X'
-
 		# Diagonals win
 		# Positive slopped Diagonal
 		for c in range(self.n - (self.s-1)):
