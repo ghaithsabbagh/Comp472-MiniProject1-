@@ -164,11 +164,20 @@ class Game:
 		if self.result != None:
 			if self.result == 'X':
 				print('The winner is X!')
+				file.write("The winner is X!")
 			elif self.result == 'O':
 				print('The winner is O!')
+				file.write("The winner is O!")
 			elif self.result == '.':
 				print("It's a tie!")
+				file.write("It's a tie!")
 			self.initialize_game()
+			print()
+			file.write("\n)
+			
+			
+			
+			
 		return self.result
 
 	def input_move(self):
