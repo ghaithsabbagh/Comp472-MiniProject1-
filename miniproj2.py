@@ -181,7 +181,7 @@ class Game:
 		print(F'iv\tAverage evaluation depth:')  # Add here
 		print(F'v\tAverage recursion depth:')  # Add here
 		if self.result != None:
-		    print(F'vi\Total moves:')  # Add here
+			print(F'vi\Total moves:')  # Add here
 			 
 		file.write(F'i\tEvaluation time: ')  # Add here
 		file.write(F'ii\tHeuristic evaluations: ')  # Add here
@@ -189,7 +189,7 @@ class Game:
 		file.write(F'iv\tAverage evaluation depth: ')  # Add here
 		file.write(F'v\tAverage recursion depth: ')  # Add here
 		if self.result != None:
-			     file.write(F'vi\Total moves: ')  # Add here
+			file.write(F'vi\Total moves: ')  # Add here
 			
 		return self.result
 
