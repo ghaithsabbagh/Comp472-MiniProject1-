@@ -174,6 +174,36 @@ class Game:
 			self.initialize_game()
 			print()
 			file.write("\n)
+				   
+		print(F'i\tEvaluation time:')  # Add here
+		print(F'ii\tHeuristic evaluations:')  # Add here
+		print(F'iii\tEvaluations by depth:')  # Add here
+		print(F'iv\tAverage evaluation depth:')  # Add here
+		print(F'v\tAverage recursion depth:')  # Add here
+		if self.result != None:
+		    print(F'vi\Total moves:')  # Add here
+			 
+		file.write(F'i\tEvaluation time: ')  # Add here
+		file.write(F'ii\tHeuristic evaluations: ')  # Add here
+		file.write(F'iii\tEvaluations by depth: ')  # Add here
+		file.write(F'iv\tAverage evaluation depth: ')  # Add here
+		file.write(F'v\tAverage recursion depth: ')  # Add here
+		if self.result != None:
+			     file.write(F'vi\Total moves: ')  # Add here
+			
+		return self.result
+
+	def input_move(self):
+		while True:
+			print(F'Player {self.player_turn}, enter your move:')
+			px = int(input('enter the x coordinate: '))
+			py = input('enter the y coordinate in CAPS: ')
+			py_number = ord(py) - 65
+			if self.is_valid(px, py_number):
+				return (px,py_number)
+			else:
+				print('The move is not valid! Try again.')
+
 			
 			
 			
