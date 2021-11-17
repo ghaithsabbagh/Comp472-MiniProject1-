@@ -49,18 +49,31 @@ class Game:
 
 	def draw_board(self):
 		ch = 'A'
+		file = open("gameTrace-" + str(self.n) + str(self.b) + str(self.s) + str(self.t) + ".txt", "a")
+		
 		print()
+		file.write("\n")
 		print("    ", end="")
+		file.write("    ")
+		
+		# Printing letters on the board
 		for y in range(0, self.n):
 			print(chr(ord(ch) + y) + " ", end="")
+			file.write(chr(ord(ch) + y))
 		print()
+		file.print("\n")
 
 		for x in range(0, self.n):
 			print(str(x) + " | ", end="")
+			file.write(str(x) + " | ")
+			
 			for y in range(0, self.n):
 				print(F'{self.current_state[x][y]}' + " ", end="")
+				file.write(F'{self.current_state[x][y]}')
 			print()
+			file.write("\n")
 		print()
+		file.write("\n")
 
 	def is_valid(self, px, py):
 		if px < 0 or px > (self.n-1) or py < 0 or py > (self.n-1):
@@ -138,7 +151,15 @@ class Game:
 		return '.'
 
 	def check_end(self):
+		EvaluationTime = 0      # For average Evaluation Time
+	    	heuristicEval = 0       # For total heuristic Eval
+	    	averageEvalDepth = 0 
+	    	averageRecursionDepth = 0 
+	    	numofEvalsbyDepth = [0]*(self.d2+1) if self.d1 < self.d2 else [0]*(self.d1+1)
+	    
+	    	file = open("gameTrace-" + str(self.n) + str(self.b) + str(self.s) + str(self.t) + ".txt", "a")
 		self.result = self.is_end()
+		
 		# Printing the appropriate message if the game has ended
 		if self.result != None:
 			if self.result == 'X':
