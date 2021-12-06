@@ -1,4 +1,4 @@
-https://github.com/ghaithsabbagh/Comp472-MiniProject1-.git
+https://github.com/ghaithsabbagh/Comp472/tree/miniProj3
 # Comp472-MiniProject3-
 
 
